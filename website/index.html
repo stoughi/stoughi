@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+</script>
+
+    <head>
+        <style>
+        .header{
+            font-size: 40px;
+            font-weight: bold;
+        }    
+        </style>
+
+        <title>Freaky Theta Chi</title> <!--Website title-->
+        <p class = header>Freak House Beer Counter</p><!--Header-->
+        <img src="images/beer.jpg">
+        
+        
+        <p id="output"></p> <!--Outputs the table made in script-->
+       
+    </head>
+
+    <style> /*Styles the table*/
+        table, th, td{
+            border: 3px solid rgb(255, 41, 230);
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+
+
+
+
+    <script>
+        var outputHTML = "";
+var Bart_Beer = 0;  //Initalize each person to have zero
+var Austin_Beer = 0;
+var Avery_Beer = 0;
+var Ian_Beer = 0;
+
+function updateTable(){
+var names = {
+    "Ian" :Ian_Beer,
+    "Austin" :Austin_Beer,
+    "Avery": Avery_Beer,
+    "Bart" :Bart_Beer 
+}; //Array with each person and their total
+
+
+outputHTML += "<table style=width:75%>"; //styles the size of the table
+outputHTML += "<th style=width:50%>Name</th>";
+outputHTML += "<th style=width:50%>Total Beers</th>";
+
+//REM: Returns the key/value of the object as array[[key, value]]
+let tValues = Object.entries(names);
+
+
+tValues.forEach((item) => { //Iterates through array: "names"
+
+
+    outputHTML += "<tr>";
+    
+    
+    outputHTML += "<td>" + item[0] + "</td>";
+    outputHTML += "<td>" + item[1] + "</td>"; 
+    outputHTML +="</tr>";
+})
+outputHTML += "</table>";
+
+document.getElementById("output").innerHTML = outputHTML; //formats the output variable
+}   
+updateTable();
+    </script>
+</html>
