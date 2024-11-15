@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-<script>
-
-</script>
 
     <head>
         <style>
         .header{
-            font-size: 40px;
+            font-size: 50px;
+            color:rgb(255, 41, 230);
             font-weight: bold;
+            margin-left: 275px;
         }    
         </style>
 
@@ -18,7 +17,10 @@
         
         <style>
             img{
-                width:550px;
+                display: block;
+                margin-left: 200px;
+                margin-right: auto;
+                width:50%;
             }
         </style>
         
@@ -30,20 +32,68 @@
         table, th, td{
             border: 3px solid rgb(255, 41, 230);
             background-color: rgb(255, 255, 255);
+            
         }
     </style>
 
+<form>
+    <div>
+        <label for="name">Enter a name</label>
+        
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name here"/>
+    </div>
+    <div>
+        <label for="beer">Enter number of beers </label>
+        <input
+            type="text"
+            id="beer"
+            name="beer"
+            placeholder="Enter a # of beers"/>
+    </div>
+    <div>
+       <button>Submit</button> 
+    </div>
+</form>
+
+<script>
+    const audio = new Audio('FreakMix2.mp3');
+
+    function playAudio(){
+        audio.play();
+    }
+    playAudio();
+</script>
 
 
 
-    <script>
+<script>
+    let input_name = myTextInput.value;
+    let total_beer = myTextInput.value;
+
+
+
+</script>
+
+
+
+
+<script>
         var outputHTML = "";
 var Bart_Beer = 0;  //Initalize each person to have zero
 var Austin_Beer = 0;
 var Avery_Beer = 0;
 var Ian_Beer = 0;
 
-function updateTable(){
+function updateTable(austin_input_beer,avery_input_beer,bart_input_beer,ian_input_beer){
+    Austin_Beer = Austin_Beer + austin_input_beer;
+    Avery_Beer = Avery_Beer + avery_input_beer;
+    Bart_Beer = Bart_Beer + bart_input_beer;
+    Ian_Beer = Ian_Beer + ian_input_beer;
+
 var names = {
     "Ian" :Ian_Beer,
     "Austin" :Austin_Beer,
